@@ -1,0 +1,119 @@
+#include <stdio.h>
+
+struct node {
+    int data;
+    struct node* ptr;
+};
+
+struct node* creat_node(){
+    return (struct node*)malloc(sizeof(struct node));
+}
+
+void delete_node(struct node *p){
+    free(p);
+}
+
+void add_beg(int v, struct node **p)
+{
+    struct node* t = creat_node();
+    t->data = v;
+    t->ptr = *p;
+    *p = t;
+}
+
+void add_end(int v, struct node **p){
+    struct node* t = creat_node();
+    t->data = v;
+    struct node* f = *p;
+    while(f->ptr != NULL)
+    f = f->ptr;
+    f->ptr = t;
+    t->ptr = NULL;
+}
+
+void print_list(struct node **p){
+    struct node *t =*p;
+    while(t != NULL){
+        printf("%d\n", t->data);
+        t= t->ptr;
+    }
+}
+
+void print_k(int k,struct node **p){
+    struct node *t =*p;
+    k--;
+    while(k != 0){
+        t= t->ptr;
+        k--;
+    }
+    printf("%d\n", t->data);
+}
+
+void del_beg(struct node **p){
+    struct node *t =*p;
+    *p = t->ptr;
+    delete_node(t);
+}
+
+void del_k(int k,struct node **p){
+    struct node *t =*p;
+    struct node *f = *p;
+    if(k == 1){
+        del_beg(p);
+    }
+    else{
+        k--;
+        k--;
+        while(k != 0){
+            k--;
+            t= t->ptr;
+        }
+        f = t->ptr;
+        t->ptr = t->ptr->ptr;
+        delete_node(f);
+    }
+}
+
+int main(){
+    struct node * start = creat_node();
+    int n,val,k,f=0;
+    start->ptr = NULL;
+    while(1){
+        printf("1. Insert an element in the beginning of the linked list.\n2. Insert an element at the end of the linked list.\n3. Traverse (Print) all the elements of linked list.\n4. Print the element at the kth position in the linked list.\n5. Delete the element at the kth position in the linked list.\n");
+        scanf("%d", &n);
+        switch (n)
+        {
+        case 1:
+            scanf("%d",&val);
+            if(f == 0){
+                start->data = val;
+                break;
+            }
+            add_beg(val, &start);
+            break;
+        case 2:
+            scanf("%d",&val);
+            if(f == 0){
+                start->data = val;
+                break;
+            }
+            add_end(val, &start);
+            break;
+        case 3:
+            print_list(&start);
+            break;
+        case 4:
+            scanf("%d", &k);
+            print_k(k, &start);
+            break;
+        case 5:
+            scanf("%d", &k);
+            del_k(k, &start);
+            break;
+        default:
+            printf("Invalid input");
+            break;
+        }
+        f++;
+    }   
+}
