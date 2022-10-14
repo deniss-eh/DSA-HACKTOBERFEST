@@ -25,14 +25,22 @@ void insertionsort(int *a, int n)
 }
 int main()
 {
+    // Input the Number 
     int n;
     cin >> n;
+    // Create An Array
     int *a = new int[n];
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
     }
+    cout<<"Before Insertion Sort"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i] << " ";
+    }
     insertionsort(a, n);
+    cout<<"After Insertion Sort"<<endl;
     for (int i = 0; i < n; i++)
     {
         cout << a[i] << " ";
