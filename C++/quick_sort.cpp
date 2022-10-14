@@ -4,7 +4,10 @@ using namespace std;
 
 void swap(int* a, int* b){int t=*a;*a=*b;*b=t;}//To swap
 
-int partition(int arr[],int low,int high)//This shifts elements by comparing to pivot
+/* We take last element as pivot and 
+place it at the correct position in 
+sorted array and continue doing this till the array is sorted*/
+int partition(int arr[],int low,int high)
 {
 	int pivot=arr[high];
 	int i=(low-1); 
@@ -17,7 +20,11 @@ int partition(int arr[],int low,int high)//This shifts elements by comparing to 
 	swap(&arr[i+1],&arr[high]);
 	return (i+1);
 }
-void quickSort(int arr[], int low, int high)//This runs the main sorting program
+
+/*This runs the main sorting program by 
+passing the first and last index*/
+
+void quickSort(int arr[], int low, int high)
 {
 	if (low<high) {
 		int pi=partition(arr,low,high);
@@ -25,6 +32,7 @@ void quickSort(int arr[], int low, int high)//This runs the main sorting program
 		quickSort(arr,pi+1,high);
 	}
 }
+
 int main()
 {
 	int arr[]={10,7,8,9,1,5};
