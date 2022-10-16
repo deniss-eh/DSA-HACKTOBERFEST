@@ -122,5 +122,4 @@ git push -u origin <your_branch_name>
 
 # Swags of Hacktoberfest:
 
- -  Many of the candidates get attracted towards hacktoberfest to get swags . So, after 4 successfully merged pull request as for 2022 you will be eligible to get a Hacktoberfest T-shirt and Some stickers on your doorstep.![Hacktoberfest 2021 T-shirt](https://res.cloudinary.com/practicaldev/image/fetch/s--xFx0Fv7H--/c_limit,f_auto,fl_progressive,q_auto,w_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/copdhz6p28fs9wokyd7r.png)
- ![Hacktoberfest Perks](https://res.cloudinary.com/practicaldev/image/fetch/s--Hwxnb5bI--/c_limit,f_auto,fl_progressive,q_auto,w_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4y65vijry8t60fw2i5le.jpg)
+ -  Many of the candidates get attracted towards hacktoberfest to get swags . So, after 4 successfully merged pull request as for 2022 you will be eligible to get a Hacktoberfest T-shirt and Some stickers on your doorstep.
