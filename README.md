@@ -2,7 +2,7 @@
 
 An open-source repository made for beginners who are looking for contributing in hacktoberfest.
 
-  
+# This repository has excluded from Hacktoberfest 2022  
 
 # Hacktoberfest-2022🔥
 
